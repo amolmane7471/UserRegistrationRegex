@@ -23,11 +23,28 @@ public class UserRegistration {
 			System.out.println(firstName+" is a Valid First Name");
 		else
 			System.err.println(firstName+" is an Invalid First Name");
+        System.out.println(" ");
 	}
+	/*
+	 * UC2 : as a user need to enter valid last name
+	 * last name start with capital letters and has minimum 3 characters
+	 */
 	
+	public static void validLastName() {
+		
+		System.out.println("enter last name");
+		String lastName = sc.next();
+	    boolean result = Pattern.matches("[A-Z]{1}[a-z]{2,}",lastName);
+        if(result)
+			System.out.println(lastName+" is a Valid Last Name");
+		else
+			System.err.println(lastName+" is an Invalid Last Name\n");
+	}
+
 public static void main(String[] args) {
 	System.out.println("*** welcome to user registration program ***");	
 		validFirstName();
+		validLastName();
 	}
 
 }
