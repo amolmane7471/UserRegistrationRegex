@@ -40,11 +40,28 @@ public class UserRegistration {
 		else
 			System.err.println(lastName+" is an Invalid Last Name\n");
 	}
+	/*
+	 * UC3 : as a user you need to enter valid email
+	 * e.g. abc.xyz@bl.co.in
+	 * email has 3 mandatory fields abc,bl,co and 2 optional in,xyz
+	 */
+	public static void validMail()
+	{
+	     System.out.println("enter your mail: ");
+	      String mail = sc.next();
+	      boolean result = Pattern.matches("^[a-z]+[.][a-z]+[@][a-z]+[.][a-z]+[.][a-z]+$",mail);  
+	      if(result) {
+	         System.out.println("mail is valid");
+	      } else {
+	         System.out.println("mail is not valid");
+	      }
 
+	}
 public static void main(String[] args) {
 	System.out.println("*** welcome to user registration program ***");	
 		validFirstName();
 		validLastName();
+		validMail();
 	}
 
 }
