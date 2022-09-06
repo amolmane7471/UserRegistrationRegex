@@ -49,25 +49,43 @@ public class UserRegistration {
 	{
 	     System.out.println("enter your mail: ");
 	      String mail = sc.next();
-	      boolean result = Pattern.matches("^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$",mail);  
+	      boolean result = Pattern.matches("^[a-zA-Z]+[0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]{2,}[.]?[a-z]{2,}$",mail);  
 	      if(result) {
 	         System.out.println("mail is valid");
 	      } else {
 	         System.out.println("mail is not valid");
 	      }
-
+	      
 	}
+	/*
+	 * UC4 : as user you need to enter valid mobile number
+	 */
 	public static void validMobileNum()
 	{
 	     System.out.println("enter your mobile number: ");
 	      String mobileNum = sc.next();
-	      boolean result = Pattern.matches("^[+0-9]{3}[0-9]{10}$",mobileNum);  
+	      boolean result = Pattern.matches("^[[+0-9]{3}]?[0-9]{10}$",mobileNum);  
 	      if(result) {
 	         System.out.println("number is valid");
 	      } else {
 	         System.out.println("number is not valid");
 	      }
-
+	}
+	/*
+	 * UC 5 : as a user need to follow pre-defined password rules
+	 * rule 1 : password must have minimum 8 characters
+	 */
+	public static void validPassword()
+	{
+	     System.out.println("enter a password(min 8 characters): ");
+	      String password = sc.next();
+	      boolean result = Pattern.matches("^[a-zA-Z0-9]*[@!#$^&*?]*[a-zA-Z0-9]+{8,}$",password);  
+	      if(result) {
+	         System.out.println("password is valid");
+	      } else {
+	         System.out.println("password is not valid");
+	      }
+	      validPassword();
 	}
 
 public static void main(String[] args) {
@@ -76,6 +94,7 @@ public static void main(String[] args) {
 		validLastName();
 		validMail();
 		validMobileNum();
+		validPassword();
 	}
 
 }
