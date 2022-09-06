@@ -79,7 +79,7 @@ public class UserRegistration {
 	{
 	     System.out.println("enter a password(min 8 characters): ");
 	      String password = sc.next();
-	      boolean result = Pattern.matches("^[a-zA-Z0-9]*[@!#$^&*?]*[a-zA-Z0-9]+{8,}$",password);  
+	      boolean result = Pattern.matches("^[[a-zA-Z0-9]*[@!#$^&*?]*[a-zA-Z0-9]]{8,}+$",password);  
 	      if(result) {
 	         System.out.println("password is valid");
 	      } else {
