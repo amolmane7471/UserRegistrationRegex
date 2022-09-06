@@ -49,7 +49,7 @@ public class UserRegistration {
 	{
 	     System.out.println("enter your mail: ");
 	      String mail = sc.next();
-	      boolean result = Pattern.matches("^[a-z]+[.][a-z]+[@][a-z]+[.][a-z]+[.][a-z]+$",mail);  
+	      boolean result = Pattern.matches("^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$",mail);  
 	      if(result) {
 	         System.out.println("mail is valid");
 	      } else {
@@ -57,11 +57,25 @@ public class UserRegistration {
 	      }
 
 	}
+	public static void validMobileNum()
+	{
+	     System.out.println("enter your mobile number: ");
+	      String mobileNum = sc.next();
+	      boolean result = Pattern.matches("^[+0-9]{3}[0-9]{10}$",mobileNum);  
+	      if(result) {
+	         System.out.println("number is valid");
+	      } else {
+	         System.out.println("number is not valid");
+	      }
+
+	}
+
 public static void main(String[] args) {
 	System.out.println("*** welcome to user registration program ***");	
 		validFirstName();
 		validLastName();
 		validMail();
+		validMobileNum();
 	}
 
 }
