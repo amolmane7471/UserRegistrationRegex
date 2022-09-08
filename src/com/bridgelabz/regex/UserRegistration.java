@@ -64,7 +64,7 @@ public class UserRegistration {
 	{
 	     System.out.println("enter your mobile number: ");
 	      String mobileNum = sc.next();
-	      boolean result = Pattern.matches("^[+0-9]{3}[0-9]{10}$",mobileNum);  
+	      boolean result = Pattern.matches("^[+0-9 ]{3}[0-9]{10}$",mobileNum);  
 	      if(result) {
 	         System.out.println("number is valid");
 	      } else {
@@ -72,20 +72,20 @@ public class UserRegistration {
 	      }
 	}
 	/*
-	 * UC 7 : as a user need to follow pre-defined password rules
-	 * rule 3 : password must have atleast 1 numeric value
+	 * UC 8 : as a user need to follow pre-defined password rules
+	 * rule 4 : password has Exactly 1 special character
 	 */
 	public static void validPassword()
 	{
 	     System.out.println("enter a password(min 8 characters): ");
 	      String password = sc.next();
-	      boolean result = Pattern.matches("^(?=.*[A-Z])(?=.*[0-9])([a-z0-9]*([@#$%^&?*])*).{8,}$",password);  
+	      boolean result = Pattern.matches("^(?=.*[A-Z])(?=.*[0-9])([a-z]*)(?=.*[@#$%&*^()*-+]).{8,}$",password);  
 	      if(result) {
 	         System.out.println("password is valid");
 	      } else {
 	         System.out.println("password is not valid");
 	      }
-	      
+	     
 	}
 
 public static void main(String[] args) {
